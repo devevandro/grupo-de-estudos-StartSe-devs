@@ -1,0 +1,46 @@
+## Título: Aprenda DDD (Domain Driven Design) do jeito certo
+## Link: https://www.youtube.com/watch?v=eUf5rhBGLAk&ab_channel=FullCycle
+
+# O que é DDD?
+
+- Domain Driven Design;
+- Conjunto de princípio com foco em: Domínio, exploração de modelos de forma criativa
+  e definir e falar a linguagem ubíqua baseada em um contexto delimitado;
+- Domínio: é o coração do negócio que você está trabalhando. É baseado em um conjunto
+  de idéias, conhecimento e processos de negócio;
+- Exploração de modelos criativos: DDD preza que desenvolvedores façam parte do processo
+  de entender o negócio e todos os seus modelos nos mais diversos ângulos de simplesmente
+  entrevistar especialistas;
+- Definir e falar a linguagem ubíqua: linguagem ubíqua é a linguagem falada no dia a dia no
+  contexto da empresa. É a linguagem que utiliza as terminologias da realidade do negócio;
+
+# Paticularidades do DDD:
+- Utilizado para aplicações complexas;
+- Fácil de entender;
+- Difícil de aplicar;
+- Utilização de diversos padrões de projetos;
+
+# 3 Pilares do DDD:
+- Linguagem ubíqua;
+- Bounded contexts (contextos delimitados);
+- Context maps:
+
+# Domain Model Patterns:
+- São padrões de desenvolvimento e estruturação de aplicações cujo o domínio é o principal foco;
+- Focados em Entidades e Agragadores;
+- Objetos de valor;
+- Repositórios;
+- Serviços;
+
+# Repositórios:
+- Tem acesso direto a camada de dados;
+- Persiste dados utilizando as entidades;
+- Possui os métodos ncessários para realizar consultas;
+- Utilize sempre um repositório por agregação;
+- Pode consultar diretamente serviçoes externos;
+
+# Serviços de domínio:
+- Implementam lógica de negócios a partir da definição de um expert de domínio;
+- Trabalham com diversos fluxos de diversas entidades e agregações;
+- Utilizam os repositórios como interface de acesso aos dados;
+- Consumem recursos da camada de infraestrutura como enviar email, disparar eventos, entre outros;
