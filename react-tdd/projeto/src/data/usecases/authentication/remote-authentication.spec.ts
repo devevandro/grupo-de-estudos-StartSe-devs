@@ -1,10 +1,9 @@
-import { HttpStatusCode } from "@/data/protocols/http/http-response";
-import { InvalidCredentialsError } from "@/domain/errors/invalid-credential-error";
-import { UnexpectedError } from "@/domain/errors/unexpectedError-error";
-import { AccountModel } from "@/domain/models/account-models";
-import { mockAccountModel, mockAuthentication } from "@/domain/test/mock-account";
-import { AuthenticationParams } from "@/domain/usecases/authentication";
-import { HttpPostClientSpy } from "../../test/mock-http-client";
+import { HttpStatusCode } from "@/data/protocols/http";
+import { UnexpectedError, InvalidCredentialsError } from "@/domain/errors";
+import { AccountModel } from "@/domain/models";
+import { mockAccountModel, mockAuthentication } from "@/domain/test";
+import { AuthenticationParams } from "@/domain/usecases";
+import { HttpPostClientSpy } from "../../test";
 import { RemoteAuthentication } from "./remote-authentication";
 // import faker from 'faker';
 
