@@ -14,9 +14,11 @@
   "license": "ISC",
   "dependencies": {
     "D": "^1.0.0",
+    "axios": "^0.26.1",
     "git-commit-msg-linter": "^4.0.7"
   },
   "devDependencies": {
+    "@types/axios": "^0.14.0",
     "@types/faker": "^6.6.9",
     "@types/jest": "^27.4.0",
     "@types/node": "^17.0.10",
