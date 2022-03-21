@@ -1,30 +1,54 @@
-const path = require('path');
-const { CleanWebpackPlugin } = require('clean-webpack-plugin');
+const path = require("path");
+const { CleanWebpackPlugin } = require("clean-webpack-plugin");
 
 module.exports = {
-  mode: 'development',
-  entry: './src/main/index.tsx',
+  mode: "development",
+  entry: "./src/main/index.tsx",
   output: {
-    path: path.join(__dirname, 'public/js'),
-    publicPath: '/public/js',
-    filename: 'bundle.js'
+    path: path.join(__dirname, "public/js"),
+    publicPath: "/public/js",
+    filename: "bundle.js",
   },
   resolve: {
-    extentions: ['.ts', '.tsx', '.js'],
+    extentions: [".ts", ".tsx", ".js", "scss"],
     alias: {
-      '@': path.joi(__dirname, 'src')
-    }
+      "@": path.joi(__dirname, "src"),
+    },
+  },
+  module: {
+    rules: [
+      {
+        test: /\.ts(x?)$/,
+        loader: "ts-loader",
+        exclude: /node_modules/,
+      },
+      {
+        test: /\.scss$/,
+        use: [
+          {
+            laoder: "style-loader",
+          },
+          {
+            laoder: "css-loader",
+            options: {
+              module: true,
+            },
+          },
+          {
+            laoder: "sass-loader",
+          },
+        ],
+      },
+    ],
   },
   devServer: {
-    contentBase: './public',
+    contentBase: "./public",
     writeToDisk: true,
-    historyApiFallback: true
+    historyApiFallback: true,
   },
   externals: {
-    react: 'React',
-    'react-dom': 'ReactDom'
+    react: "React",
+    "react-dom": "ReactDom",
   },
-  plugins: [
-    new CleanWebpackPlugin()
-  ]
+  plugins: [new CleanWebpackPlugin()],
 };
