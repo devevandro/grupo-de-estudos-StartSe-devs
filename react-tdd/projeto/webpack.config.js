@@ -10,9 +10,9 @@ module.exports = {
     filename: "bundle.js",
   },
   resolve: {
-    extentions: [".ts", ".tsx", ".js", "scss"],
+    extensions: [".ts", ".tsx", ".js", "scss"],
     alias: {
-      "@": path.joi(__dirname, "src"),
+      "@": path.join(__dirname, "src"),
     },
   },
   module: {
@@ -26,29 +26,31 @@ module.exports = {
         test: /\.scss$/,
         use: [
           {
-            laoder: "style-loader",
+            loader: "style-loader",
           },
           {
-            laoder: "css-loader",
+            loader: "css-loader",
             options: {
-              module: true,
+              modules: true,
             },
           },
           {
-            laoder: "sass-loader",
+            loader: "sass-loader",
           },
         ],
       },
     ],
   },
   devServer: {
-    contentBase: "./public",
-    writeToDisk: true,
+    static: "./public",
     historyApiFallback: true,
+    devMiddleware: {
+      writeToDisk: true,
+    } 
   },
   externals: {
     react: "React",
-    "react-dom": "ReactDom",
+    "react-dom": "ReactDOM",
   },
   plugins: [new CleanWebpackPlugin()],
 };
